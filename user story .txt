@@ -1,0 +1,45 @@
+As a <persona>, 
+I want <goal/desire> 
+So that <benefit>
+
+
+As a customer,
+I want to add a product in my cart
+So that I buy this product
+
+
+ok if stock > 0 and preorder = 0
+    take off 1 of the stock
+ok if preorder = 1
+ok if the product is visible
+
+Given I'm in the product of id "1234"
+And the stock is “0”
+And the preorder activation is "0"
+And the visibility of product is "1"
+And the visibility of product is "1"
+When I add the product in my cart
+Then my cart send me the error message "impossible to add
+the product in your cart"
+
+Given I'm in the product of id "1235"
+And the stock is “0”
+And the preorder activation is "1"
+And the visibility of product is "1"
+When I add the product in my cart
+Then the product of id "1235" is added in my cart
+
+Given I'm in the product of id "1236"
+And the stock is “1”
+And the preorder activation is "0"
+And the visibility of product is "1"
+When I add the product in my cart
+Then the product of id "1236" is added in my cart
+
+Given I'm in the product of id "1237"
+And the stock is “1”
+And the preorder activation is "0"
+And the visibility of product is "0"
+When I add the product in my cart
+Then my cart send me the error message "impossible to add
+the product in your cart"
